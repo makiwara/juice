@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: Helvetica;
+    background: #FFFFFF;
+    color: #000000;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -webkit-text-size-adjust: none;
+}
+
+/*	TODO: Правильную подкладку под кнопку, нажатое состояние */
+.j-button {
+    margin: 0;
+    border-width: 0 5px;
+    padding: 0 3px;
+	float:left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: rgba(0, 0, 0, 0.6) 0px -1px 0;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
+    background: none;
+    -webkit-border-image: url(button/tool.png) 0 5 0 5;
+}
+.j-button-blue {
+	-webkit-border-image: url(button/blue.png) 0 5 0 5;
+}
+.j-button-pressed {
+    -webkit-border-image: url(button/pressed.png) 0 5 0 5;
+}
+
+
+
+.j-screen {
+	width:320px; height:415px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+	background:#fff;
+}
+.j-screen-tabbar { height:365px;}
+.j-screen-no-navbar { height:460px;}
+.j-screen-scroller 
+{
+	float:left;
+	width:100%;
+	padding:0;
+}
+.j-screen-stripes {
+	background:#c5ccd4 url(stripes.png);
+}
+.j-screen-dark {
+	background:#666;
+}
+
+.j-tabbar {
+    height: 50px;
+	position:relative;
+	overflow:hidden;
+	z-index:2000;
+    background: url(tabbar.png) #000 repeat-x; 
+}
+.j-tabbar .item { margin:1px -1px 0; 
+	text-align:center; font:11px Arial; color:#666; float:left; width:20%; 
+	padding:1px 1px 2px 1px;
+	cursor:pointer; cursor:hand; }
+.j-tabbar-4 .item { width:25%;}
+.j-tabbar-3 .item { width:33%;}
+.j-tabbar .item img { margin: -7px auto -10px; display:block; width:48px; height:48px;}
+.j-tabbar .item-selected img { }
+.j-tabbar .item-selected { 
+	padding:0 0 2px 0;
+	color:#3ec1f7;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border:1px solid rgba(62, 193, 247, 0.13);
+	background: rgba(62, 193, 247, 0.0976562);
+	}
+
+.j-toolbar {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-bottom: 1px solid #2d3642;
+    border-top: 1px solid #6d84a2;
+    padding: 10px;
+    height: 45px;
+    background: url(toolbar.png) #6d84a2 repeat-x;
+}
+.j-toolbar .title {
+    xposition: absolute;
+    xwidth: 150px;
+    overflow: hidden;
+    left: 50%;
+    margin: 1px 0 0 0px; /* -75px */
+    height: 45px;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: rgba(0, 0, 0, 0.4) 0px -1px 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #FFFFFF;
+}
+.j-toolbar .j-button { margin-top:-3px;}
+.j-toolbar .right { float:right; margin-left:10px; }
+.j-toolbar .back {
+    left: 6px;
+    right: auto;
+    padding: 0;
+	margin-right:10px;
+    max-width: 55px;
+    border-width: 0 8px 0 14px;
+    -webkit-border-image: url(button/back.png) 0 8 0 14;
+}
+.j-toolbar .back-pressed {
+    -webkit-border-image: url(button/back-.png) 0 8 0 14;
+}
+
+/* LISTS */
+.j-list-item { 
+	border-bottom: 1px solid #E0E0E0;
+	height:42px;
+	padding: 3px 10px;
+}	
+.j-list-item-short { height:36px;}
+.j-list-item-short .title { margin-top:7px;}
+.j-list-item .title { 
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font:18px Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.j-list-item .subtle { 
+	color:#999;
+	font-weight:normal;
+}
+.j-list-item .date { 
+	float:right;
+	font:15px Helvetica, Arial, sans-serif;
+	color:#558fd8;
+	margin-top:12px;
+}
+.j-list-item .more { 
+	margin-top:2px;
+	font:15px Helvetica, Arial, sans-serif;
+	color:#999;
+}
+.j-list-item .details { 
+	float:right;
+	width:31px; height:31px;
+	margin-left:10px; 
+	margin-top:5px;
+	background: url(list/details.png) no-repeat center center;
+}
+.j-list-item-short .details { 
+	margin-top:2px;
+}
+.j-list-arrow { 
+	padding-right:30px; 
+	background: url(list/arrow.png) no-repeat right center; 
+}
+.j-list-arrow-pressed {
+    background-color: #194fdb !important;
+    background-image: url(list/arrow-.png), url(list/selection.png) !important;
+    background-repeat: no-repeat, repeat-x;
+    background-position: right center, left top;
+    color: #FFFFFF !important;
+}
+.j-list-arrow-pressed .more,
+.j-list-arrow-pressed .date,
+.j-list-arrow-pressed .subtle { color:#fff;}
+.j-list-details-pressed {
+    background-color: #194fdb !important;
+    background-image: url(list/selection.png) !important;
+    background-repeat: repeat-x;
+    background-position: left top;
+    color: #FFFFFF !important;
+}
+.j-list-details-pressed .details { visibility:hidden; }
+.j-list-details-pressed .more,
+.j-list-details-pressed .date,
+.j-list-details-pressed .subtle { color:#fff;}
