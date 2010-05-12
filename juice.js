@@ -20,7 +20,7 @@
 				break;
 		}
 	};
-	var ttf = function(css, timeout, no_remove)
+	var ttf = function(css, timeout)
 	{
 		var t;
 		return function(e){
@@ -35,10 +35,7 @@
 					break;
 				case "touchend":
 					if (timeout) window.clearTimeout(t);
-					if (no_remove) 
-						$this.addClass(css);
-					else
-						$this.removeClass(css);
+					$this.removeClass(css);
 					$this.click();
 					break;
 				case "touchmove":
@@ -49,8 +46,8 @@
 		};
 	}
 	// LIST ITEMS default behavior
-	$('.j-list-arrow').live(ts, ttf('j-list-arrow-pressed', 500, 'no_remove'));
-	$('.j-list-details').live(ts, ttf('j-list-details-pressed', 500, 'no_remove'));
+	$('.j-list-arrow').live(ts, ttf('j-list-arrow-pressed', 500));
+	$('.j-list-details').live(ts, ttf('j-list-details-pressed', 500));
 	// SCROLLING SCREEN default behavior
 	$(function(){
 		document.addEventListener('touchmove', function(e){ e.preventDefault(); });
